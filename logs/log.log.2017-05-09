@@ -1,0 +1,71 @@
+2017-05-09 19:08:14  [ main:0 ] - [ INFO ]  test
+2017-05-09 19:08:14  [ main:1 ] - [ ERROR ]  tet
+2017-05-09 19:08:15  [ main:611 ] - [ INFO ]  Verifying properties
+2017-05-09 19:08:15  [ main:663 ] - [ INFO ]  Property key.serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:663 ] - [ INFO ]  Property metadata.broker.list is overridden to ZS0114PDNEV01:9092,ZS0114PDNEV02:9092,ZS0114PDNEV03:9092
+2017-05-09 19:08:15  [ main:664 ] - [ INFO ]  Property partitioner.class is overridden to simplekafka08.simplekafka08.PartitionerDemo
+2017-05-09 19:08:15  [ main:664 ] - [ INFO ]  Property request.required.acks is overridden to 1
+2017-05-09 19:08:15  [ main:664 ] - [ INFO ]  Property serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:731 ] - [ INFO ]  Verifying properties
+2017-05-09 19:08:15  [ main:732 ] - [ INFO ]  Property key.serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:732 ] - [ INFO ]  Property metadata.broker.list is overridden to ZS0114PDNEV01:9092,ZS0114PDNEV02:9092,ZS0114PDNEV03:9092
+2017-05-09 19:08:15  [ main:732 ] - [ INFO ]  Property partitioner.class is overridden to simplekafka08.simplekafka08.PartitionerDemo
+2017-05-09 19:08:15  [ main:733 ] - [ INFO ]  Property request.required.acks is overridden to 1
+2017-05-09 19:08:15  [ main:733 ] - [ INFO ]  Property serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:734 ] - [ INFO ]  Verifying properties
+2017-05-09 19:08:15  [ main:734 ] - [ INFO ]  Property key.serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:735 ] - [ INFO ]  Property metadata.broker.list is overridden to ZS0114PDNEV01:9092,ZS0114PDNEV02:9092,ZS0114PDNEV03:9092
+2017-05-09 19:08:15  [ main:735 ] - [ INFO ]  Property partitioner.class is overridden to simplekafka08.simplekafka08.PartitionerDemo
+2017-05-09 19:08:15  [ main:735 ] - [ INFO ]  Property request.required.acks is overridden to 1
+2017-05-09 19:08:15  [ main:735 ] - [ INFO ]  Property serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:736 ] - [ INFO ]  Verifying properties
+2017-05-09 19:08:15  [ main:736 ] - [ INFO ]  Property key.serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:737 ] - [ INFO ]  Property metadata.broker.list is overridden to ZS0114PDNEV01:9092,ZS0114PDNEV02:9092,ZS0114PDNEV03:9092
+2017-05-09 19:08:15  [ main:737 ] - [ INFO ]  Property partitioner.class is overridden to simplekafka08.simplekafka08.PartitionerDemo
+2017-05-09 19:08:15  [ main:737 ] - [ INFO ]  Property request.required.acks is overridden to 1
+2017-05-09 19:08:15  [ main:737 ] - [ INFO ]  Property serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:738 ] - [ INFO ]  Verifying properties
+2017-05-09 19:08:15  [ main:739 ] - [ INFO ]  Property key.serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:739 ] - [ INFO ]  Property metadata.broker.list is overridden to ZS0114PDNEV01:9092,ZS0114PDNEV02:9092,ZS0114PDNEV03:9092
+2017-05-09 19:08:15  [ main:739 ] - [ INFO ]  Property partitioner.class is overridden to simplekafka08.simplekafka08.PartitionerDemo
+2017-05-09 19:08:15  [ main:739 ] - [ INFO ]  Property request.required.acks is overridden to 1
+2017-05-09 19:08:15  [ main:740 ] - [ INFO ]  Property serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:741 ] - [ INFO ]  Verifying properties
+2017-05-09 19:08:15  [ main:741 ] - [ INFO ]  Property key.serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:741 ] - [ INFO ]  Property metadata.broker.list is overridden to ZS0114PDNEV01:9092,ZS0114PDNEV02:9092,ZS0114PDNEV03:9092
+2017-05-09 19:08:15  [ main:741 ] - [ INFO ]  Property partitioner.class is overridden to simplekafka08.simplekafka08.PartitionerDemo
+2017-05-09 19:08:15  [ main:742 ] - [ INFO ]  Property request.required.acks is overridden to 1
+2017-05-09 19:08:15  [ main:742 ] - [ INFO ]  Property serializer.class is overridden to kafka.serializer.StringEncoder
+2017-05-09 19:08:15  [ main:745 ] - [ INFO ]  Verifying properties
+2017-05-09 19:08:15  [ main:746 ] - [ INFO ]  Property auto.commit.interval.ms is overridden to 1000
+2017-05-09 19:08:15  [ main:746 ] - [ INFO ]  Property group.id is overridden to group-1
+2017-05-09 19:08:15  [ main:746 ] - [ INFO ]  Property zookeeper.connect is overridden to ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181
+2017-05-09 19:08:15  [ main:746 ] - [ INFO ]  Property zookeeper.session.timeout.ms is overridden to 400
+2017-05-09 19:08:15  [ main:746 ] - [ INFO ]  Property zookeeper.sync.time.ms is overridden to 200
+2017-05-09 19:08:16  [ main:1183 ] - [ INFO ]  [group-1_DESKTOP-6T2T38V-1494328096165-e65cb9c3], Connecting to zookeeper instance at ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181
+2017-05-09 19:08:16  [ ZkClient-EventThread-21-ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181:1194 ] - [ INFO ]  Starting ZkClient event thread.
+2017-05-09 19:08:25  [ main:10214 ] - [ INFO ]  Client environment:zookeeper.version=3.3.3-1203054, built on 11/17/2011 05:47 GMT
+2017-05-09 19:08:25  [ main:10214 ] - [ INFO ]  Client environment:host.name=DESKTOP-6T2T38V
+2017-05-09 19:08:25  [ main:10214 ] - [ INFO ]  Client environment:java.version=1.7.0_71
+2017-05-09 19:08:25  [ main:10214 ] - [ INFO ]  Client environment:java.vendor=Oracle Corporation
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:java.home=C:\Program Files\Java\jdk1.7.0_71\jre
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:java.class.path=D:\workspace\AnalysisCan\target\classes;D:\maven\my_local_repository\org\apache\kafka\kafka_2.10\0.8.1\kafka_2.10-0.8.1.jar;D:\maven\my_local_repository\com\yammer\metrics\metrics-annotation\2.2.0\metrics-annotation-2.2.0.jar;D:\maven\my_local_repository\com\yammer\metrics\metrics-core\2.2.0\metrics-core-2.2.0.jar;D:\maven\my_local_repository\org\xerial\snappy\snappy-java\1.0.5\snappy-java-1.0.5.jar;D:\maven\my_local_repository\org\apache\zookeeper\zookeeper\3.3.4\zookeeper-3.3.4.jar;D:\maven\my_local_repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\maven\my_local_repository\net\sf\jopt-simple\jopt-simple\3.2\jopt-simple-3.2.jar;D:\maven\my_local_repository\org\scala-lang\scala-library\2.10.1\scala-library-2.10.1.jar;D:\maven\my_local_repository\com\101tec\zkclient\0.3\zkclient-0.3.jar;D:\maven\my_local_repository\c3p0\c3p0\0.9.1.2\c3p0-0.9.1.2.jar;D:\maven\my_local_repository\org\mariadb\jdbc\mariadb-java-client\1.5.3\mariadb-java-client-1.5.3.jar;D:\maven\my_local_repository\redis\clients\jedis\2.7.2\jedis-2.7.2.jar;D:\maven\my_local_repository\org\apache\commons\commons-pool2\2.3\commons-pool2-2.3.jar;D:\maven\my_local_repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;D:\maven\my_local_repository\log4j\apache-log4j-extras\1.2.17\apache-log4j-extras-1.2.17.jar;D:\maven\my_local_repository\org\slf4j\slf4j-log4j12\1.5.8\slf4j-log4j12-1.5.8.jar;D:\maven\my_local_repository\org\slf4j\slf4j-api\1.5.8\slf4j-api-1.5.8.jar;D:\maven\my_local_repository\com\fasterxml\jackson\core\jackson-databind\2.8.4\jackson-databind-2.8.4.jar;D:\maven\my_local_repository\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;D:\maven\my_local_repository\com\fasterxml\jackson\core\jackson-core\2.8.4\jackson-core-2.8.4.jar;D:\maven\my_local_repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;D:\maven\my_local_repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:java.library.path=C:\Program Files\Java\jdk1.7.0_71\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jdk1.8.0_101/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_101/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_101/bin/../jre/lib/amd64;C:\Program Files (x86)\PHP\;C:\Program Files\Java\jdk1.8.0_101\bin;C:\Program Files\Java\jdk1.8.0_101\jre\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;%USERPROFILE%\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;D:\storm\apache-maven-3.3.9-bin\apache-maven-3.3.9\bin;C:\Program Files\TortoiseSVN\bin;C:\Users\FH\.dnx\bin;C:\Users\FH\AppData\Roaming\npm;C:\Users\FH\AppData\Local\atom\bin;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;E:\study\eclipse-jee-mars-1-win32-x86_64\eclipse;;.
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:java.io.tmpdir=C:\Users\FH\AppData\Local\Temp\
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:java.compiler=<NA>
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:os.name=Windows 8.1
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:os.arch=amd64
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:os.version=6.3
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:user.name=FH
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:user.home=C:\Users\FH
+2017-05-09 19:08:25  [ main:10215 ] - [ INFO ]  Client environment:user.dir=D:\workspace\AnalysisCan
+2017-05-09 19:08:25  [ main:10217 ] - [ INFO ]  Initiating client connection, connectString=ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181 sessionTimeout=400 watcher=org.I0Itec.zkclient.ZkClient@59fab88b
+2017-05-09 19:08:36  [ ZkClient-EventThread-21-ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181:21515 ] - [ INFO ]  Terminate ZkClient event thread.
+2017-05-09 19:24:31  [ main:0 ] - [ INFO ]  test
+2017-05-09 19:26:25  [ main:0 ] - [ INFO ]  test
+2017-05-09 19:45:28  [ main:0 ] - [ INFO ]  test
+2017-05-09 19:45:55  [ main:0 ] - [ INFO ]  test
+2017-05-09 19:55:51  [ main:1 ] - [ INFO ]  test
+2017-05-09 19:56:17  [ main:0 ] - [ INFO ]  test
+2017-05-09 20:04:04  [ main:0 ] - [ INFO ]  test
+2017-05-09 20:04:24  [ main:0 ] - [ INFO ]  test

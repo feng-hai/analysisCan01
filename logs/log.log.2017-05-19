@@ -1,0 +1,8 @@
+2017-05-19 20:04:25  [ main:0 ] - [ INFO ]  Verifying properties
+2017-05-19 20:04:25  [ main:46 ] - [ INFO ]  Property auto.commit.interval.ms is overridden to 1000
+2017-05-19 20:04:25  [ main:46 ] - [ INFO ]  Property group.id is overridden to group-1
+2017-05-19 20:04:25  [ main:46 ] - [ INFO ]  Property zookeeper.connect is overridden to ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181
+2017-05-19 20:04:25  [ main:47 ] - [ INFO ]  Property zookeeper.session.timeout.ms is overridden to 400
+2017-05-19 20:04:25  [ main:47 ] - [ INFO ]  Property zookeeper.sync.time.ms is overridden to 200
+2017-05-19 20:04:25  [ main:443 ] - [ INFO ]  [group-1_DESKTOP-6T2T38V-1495195465664-41716955], Connecting to zookeeper instance at ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181
+2017-05-19 20:04:25  [ ZkClient-EventThread-13-ZS0114PDNEV01:2181,ZS0114VYZTEV7:2181,ZS0114VYZTEV8:2181:454 ] - [ INFO ]  Starting ZkClient event thread.
