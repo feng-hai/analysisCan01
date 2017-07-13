@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>kafka-demo</groupId>
-	<artifactId>kafka-analysis</artifactId>
+	<artifactId>kafka-analysis-redis</artifactId>
 	<version>1.0.2</version>
 	<packaging>jar</packaging>
-	<name>kafka-analysis</name>
+	<name>kafka-analysis-redis</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>

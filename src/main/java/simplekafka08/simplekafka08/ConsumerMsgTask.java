@@ -47,9 +47,9 @@ public class ConsumerMsgTask implements Runnable {
 				byte[] message = it.next().message();
 
 				if (message != null && message.length > 0) {
-					 executor.submit(new HandleThread(message));
+					 //executor.submit(new HandleThread(message));
 
-				     //executor.submit(new HandleThreadForStatus(message));
+				     executor.submit(new HandleThreadForStatus(message));
 				}
 				
 			} catch (Exception e) {
