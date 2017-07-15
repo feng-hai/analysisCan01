@@ -124,11 +124,11 @@ public class ConsumerDemo {
 			sendData.setDaemon(true);
 			sendData.start();
 		}
-		 for (int i = 0; i < 6; i++) {
-				SaveDataRedis sendData = new SaveDataRedis();
-				sendData.setDaemon(true);
-				sendData.start();
-		 }
+//		 for (int i = 0; i < 6; i++) {
+//				SaveDataRedis sendData = new SaveDataRedis();
+//				sendData.setDaemon(true);
+//				sendData.start();
+//		 }
 //		SaveDataRedis sendData = new SaveDataRedis();
 //		sendData.setDaemon(true);
 //		sendData.start();
