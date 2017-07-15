@@ -115,20 +115,20 @@ public class ConsumerDemo {
 		Timer timer = new Timer();
 		timer.schedule(new MyTask(), new Date(), 300000);
 
-		// 更新车辆状态
-		Timer timerOnLine = new Timer();
-		timerOnLine.schedule(new MyTaskOnLine(), new Date(), 120000);
+	// 更新车辆状态
+		//Timer timerOnLine = new Timer();
+		//timerOnLine.schedule(new MyTaskOnLine(), new Date(), 120000);
 //
 //		for (int i = 0; i < 6; i++) {
 //			SendDataTokafka sendData = new SendDataTokafka();
 //			sendData.setDaemon(true);
 //			sendData.start();
 //		}
-		// for (int i = 0; i < 6; i++) {
+		// for (int i = 0; i < 3; i++) {
 				SaveDataRedis sendData = new SaveDataRedis();
 				sendData.setDaemon(true);
 				sendData.start();
-		 //}
+		// }
 //		SaveDataRedis sendData = new SaveDataRedis();
 //		sendData.setDaemon(true);
 //		sendData.start();

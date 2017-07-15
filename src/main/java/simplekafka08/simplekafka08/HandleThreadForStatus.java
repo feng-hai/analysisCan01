@@ -71,7 +71,7 @@ public class HandleThreadForStatus extends Thread {
 			if (date == null) {
 				return;
 			}
-			if (new Date().getTime() - date.getTime() > 2 * 1000 * 60) {
+			if (new Date().getTime() - date.getTime() > 5 * 1000 * 60) {
 
 				logger.info("抛弃" + machineryId + "/"
 						+ DEFAULT_DATE_SIMPLEDATEFORMAT.format(message.getAppend().getServerTime()));

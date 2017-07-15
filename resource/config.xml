@@ -276,6 +276,10 @@
 			<value id="i1" title="箱号" alias=""/>
 			<value id="i2" title="电压" alias=""/>
 		</can>
+		<!-- zff -->
+		<can name="0C1AA7A1">
+			<value id="totalDistance1" title="里程" alias="MILEAGE"/>
+		</can>
 	</analyzeType>
 	<!-- electric 纯电动 -->
 	<analyzeType type="1" name="纯电动">
@@ -435,6 +439,9 @@
 		<can name="18XX28F4">
 			<value id="s1" title="采样点 编号" alias=""/>
 		</can>
+		<can name="0C1AA7A1">
+			<value id="eledistance1" title="里程" alias="MILEAGE"/>
+		</can>
 	</analyzeType>
 	<!-- amt.pureElectric AMT纯电动 -->
 	<analyzeType type="2" name="AMT纯电动">
@@ -517,9 +524,10 @@
 			<value id="az15" title="左转向指示" alias="LEFT_TURE_INDICATOR"/>
 			<value id="az16" title="左侧气囊气压" alias="AIR_PRESSURE1"/>
 			<value id="az17" title="右侧气囊气压" alias="AIR_PRESSURE2"/>
+			<value id="az18" title="车速" alias="SPEED"/>
 		</can>
 		<can name="0C1AA7A1">
-			<value id="ba1" title="里程" alias=""/>
+			<value id="ba1" title="里程" alias="MILEAGE"/>
 		</can>
 		<can name="10262B27">
 			<value id="bb1" title="停机" alias="CTRL_WORK_ORDER"/>
@@ -1349,6 +1357,7 @@
 			<value id="ff13" title="时" alias="TIME"/>
 			<value id="ff14" title="分" alias="BRANCH"/>
 			<value id="ff15" title="秒" alias="SECOND"/>
+			<value id="ff16" title="车速" alias="SPEED"/>
 		</can>
 		<can name="180028F4">
 			<value id="fl1" title="" alias=" "/>
@@ -1407,6 +1416,9 @@
 		<can name="18XX28F3">
 			<value id="fk1" title="箱号 " alias=" "/>
 			<value id="fk2" title="电压" alias=" "/>
+		</can>
+		<can name="0C1AA7A1">
+			<value id="expdistance1" title="里程" alias="MILEAGE"/>
 		</can>
 
 	</analyzeType>
@@ -1473,6 +1485,7 @@
 			<value id="ai6" title="超级电容输入能量" alias="CAPCINENERGY"></value>
 			<value id="aj4" title="超级电容输出总电能" alias="CAPACONENERGY"></value>
 		</can>
+
 		<can name="0C1BA709">
 			<value id="am3" title="DCDC系统消耗总电能（kwh）" alias="DCDCENERGY" >
 		</value>

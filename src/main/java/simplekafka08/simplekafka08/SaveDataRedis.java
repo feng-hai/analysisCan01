@@ -29,21 +29,20 @@ public class SaveDataRedis extends Thread {
 
 	private Config config;
 	private static final Logger logger = LoggerFactory.getLogger(SaveDataRedis.class);
+	long refresh = System.currentTimeMillis();
 
+	//
 	public SaveDataRedis() {
 
 	}
 
+	
 	@SuppressWarnings("resource")
 	public void run() {
+	 JedisClusterPipeline jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
 		long s = System.currentTimeMillis();
-		long refresh = System.currentTimeMillis();
-		JedisClusterPipeline jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
-		jcp.refreshCluster();
 		while (true) {
-
 			try {
-
 				ObjectModelOfRedis message = publicStaticMap.getRedisValuesQueue().take();
 				jcp.hmset("mach:" + message.getKey(), message.getRedisValues());
 				// RedisPool.getInstance().getJedisCluster().hmset("mach:"
@@ -51,7 +50,7 @@ public class SaveDataRedis extends Thread {
 
 				logger.info("K" + message.getKey() +"-"+ publicStaticMap.getMessageQueue().size()+"-" + publicStaticMap.getRedisValuesQueue().size() + "-"
 						+ message.getRedisValues().get("lastLocateTime") + ":"
-						+ message.getRedisValues().get("lastCanTime")+":"+ message.getRedisValues().get("lastCanTime"));
+						+ message.getRedisValues().get("MILEAGE")+":"+ message.getRedisValues().get("lastCanTime"));
 
 				long t = System.currentTimeMillis() - s;
 				if (t >= 1000) {
@@ -61,8 +60,10 @@ public class SaveDataRedis extends Thread {
 
 			} catch (Exception e) {
 				e.printStackTrace();
+			
 				jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
 				jcp.refreshCluster();
+			   //	jcp.refreshCluster();
 			}
 
 		}
