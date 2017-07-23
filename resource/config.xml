@@ -105,7 +105,7 @@
 		<can name="0C08A7F0">
 			<value id="b1" title="电机转矩" alias="" />
 			<value id="b2" title="电机转速" alias="" />
-			<value id="b3" title="电机控制器输入电流" alias="MOTOR_CUR" />
+			<!-- <value id="b3" title="电机控制器输入电流" alias="" /> -->
 			<value id="b4" title="停机" alias="MOTOR_CTRL_SHUTDOWN_STATUS" />
 			<value id="b5" title="驱动" alias="MOTOR_CTRL_SHUDOWN_STATE" />
 			<value id="b6" title="制动" alias="BRAKE_MOTOR_CTRL_STATE" />
@@ -276,6 +276,10 @@
 			<value id="i1" title="箱号" alias=""/>
 			<value id="i2" title="电压" alias=""/>
 		</can>
+		<!-- zff -->
+		<can name="0C1AA7A1">
+			<value id="totalDistance1" title="里程" alias="MILEAGE"/>
+		</can>
 	</analyzeType>
 	<!-- electric 纯电动 -->
 	<analyzeType type="1" name="纯电动">
@@ -316,11 +320,11 @@
 			<value id="k19" title="DC/AC2故障代码 " alias="AC2_STATUS_CODE"/>
 		</can>
 		<can name="0C06A1A7">
-			<value id="l1" title="一档开关" alias="FIRST_SWITCH"/>
-			<value id="l2" title="二档钥匙" alias="TWO_KEY"/>
-			<value id="l3" title="前进" alias="FORWARK"/>
-			<value id="l4" title="后退" alias="BACK_OFF"/>
-			<value id="l5" title="空档" alias="NEUTRAL"/>
+			<!-- <value id="l1" title="一档开关" alias="FIRST_SWITCH"/>
+			<value id="l2" title="二档钥匙" alias="TWO_KEY"/> -->
+			<value id="l3" title="前进" alias="FILE"/>
+			<value id="l4" title="后退" alias="REVERSE"/>
+			<value id="l5" title="空档" alias="NEUTRAL_GEAR"/>
 			<value id="l6" title="诊断开关" alias="DIAGNOSTIC_SWITCH"/>
 			<value id="l7" title="ST1高温开关" alias="HIGH_TEMPERATURE_SWITCH"/>
 			<value id="l8" title="ST2限低温开关" alias="LOW_TEMPERATURE_SWITCH"/>
@@ -334,9 +338,9 @@
 			<value id="l16" title="高压检修开关" alias="HIGH_VOLTAGE_SWITCH"/>
 			<value id="l17" title="快充充电确认" alias="QUICK_CHARGE_CONFIRMATION"/>
 			<value id="l18" title="车载充电确认" alias="VEHICLE_CHARG_CONFIRMATION"/>
-			<value id="l19" title="加速踏板1" alias="ACCELERATOR_PEDAL_PERCENTAGE1"/>
-			<value id="l20" title="加速踏板2" alias="ACCELERATOR_PEDAL_PERCENTAGE2"/>
-			<value id="l21" title="制动踏板1" alias="BRAKE_PEDAL_PERCENTAGE1"/>
+			<value id="l19" title="加速踏板1" alias="PERCENTAGE_TRACTION_PEDAL"/>
+			<value id="l20" title="加速踏板2" alias="PERCENTAGE_TRACTION_PEDAL2"/>
+			<value id="l21" title="制动踏板1" alias="BRAKE_PEDAL_PERCENTAGE"/>
 			<value id="l22" title="制动踏板2" alias="BRAKE_PEDAL_PERCENTAGE2"/>
 		</can>
 		<can name="0C07A1A7">
@@ -435,6 +439,9 @@
 		<can name="18XX28F4">
 			<value id="s1" title="采样点 编号" alias=""/>
 		</can>
+		<can name="0C1AA7A1">
+			<value id="eledistance1" title="里程" alias="MILEAGE"/>
+		</can>
 	</analyzeType>
 	<!-- amt.pureElectric AMT纯电动 -->
 	<analyzeType type="2" name="AMT纯电动">
@@ -444,7 +451,7 @@
 			<value id="at3" title="AMT档位信息" alias="STALL_INFORMATION"/>
 			<value id="at4" title="AMT控制器故障代码" alias="CTRL_FAULT_CODE"/>
 			<value id="at5" title="故障、手刹与坡度" alias="HAND"/>
-			<value id="at6" title="车速" alias="speed"/>
+			<!-- <value id="at6" title="车速" alias="speed"/> -->
 			<value id="at7" title="起始档位与离合控制" alias="STAR_GEAR_CLUTCH_CTRL"/>
 			<value id="at8" title="AMT控制器LIFE" alias="CTRL"/>
 		</can>
@@ -481,9 +488,9 @@
 			<value id="aw19" title="系统代码 " alias="SYSTEM_CODE"/>
 		</can>
 		<can name="0C05A1A7">
-			<value id="ax1" title="司机加速踏板" alias="ACCELERATION"/>
+			<value id="ax1" title="司机加速踏板" alias="PERCENTAGE_TRACTION_PEDAL"/>
 			<value id="ax2" title="加速踏板IVS信号" alias="ACCELERATOR_PEDAL_SIGNAL"/>
-			<value id="ax3" title="司机制动踏板" alias="AUTO"/>
+			<value id="ax3" title="司机制动踏板" alias="BRAKE_PEDAL_PERCENTAGE"/>
 			<value id="ax4" title="储能系统电流" alias="CURRENT_ENERGY_STORAGE_SYS"/>
 			<value id="ax5" title="程序版本号" alias="PROGRAM_VERSION_NUMBER"/>
 		</can>
@@ -517,9 +524,10 @@
 			<value id="az15" title="左转向指示" alias="LEFT_TURE_INDICATOR"/>
 			<value id="az16" title="左侧气囊气压" alias="AIR_PRESSURE1"/>
 			<value id="az17" title="右侧气囊气压" alias="AIR_PRESSURE2"/>
+			<value id="az18" title="车速" alias="SPEED"/>
 		</can>
 		<can name="0C1AA7A1">
-			<value id="ba1" title="里程" alias=""/>
+			<value id="ba1" title="里程" alias="MILEAGE"/>
 		</can>
 		<can name="10262B27">
 			<value id="bb1" title="停机" alias="CTRL_WORK_ORDER"/>
@@ -573,20 +581,20 @@
 			<value id="bg2" title="生命信号" alias="OIL_PUMP_LIFE_SIGNAL"/>
 		</can>
 		<can name="180B808D">
-			<value id="bh1" title="空挡标志" alias="NEUTRAL_SIGN"/>
+			<!-- <value id="bh1" title="空挡标志" alias="NEUTRAL_SIGN"/>
 			<value id="bh2" title="前进挡标志" alias="FORWARD_STOP_MARK"/>
 			<value id="bh3" title="倒档标志" alias="REVERSE_SIGN"/>
 			<value id="bh4" title="手动挡标志" alias="MANUAL_STOP_SIGN"/>
 			<value id="bh5" title="加档标志" alias="FILE_MARK"/>
-			<value id="bh6" title="减档标志" alias="DOWNSHIFT_MARK"/>
+			<value id="bh6" title="减档标志" alias="DOWNSHIFT_MARK"/> -->
 			<value id="bh7" title="操作面板控制器LIFE" alias="OPERATION_PANEL_CTRL"/>
-			<value id="bh8" title="档位面板代码" alias="GEAR_PANEL_CODE"/>
+			<!-- <value id="bh8" title="档位面板代码" alias="GEAR_PANEL_CODE"/> -->
 		</can>
 		<can name="180F8D80">
-			<value id="bi1" title="R档允许标志" alias="ALLOW_FLAG_R"/>
-			<value id="bi2" title="M档允许标志" alias="ALLOW_FLAG"/>
-			<value id="bi3" title="当前档位值" alias="CURRENT_GEAR"/>
-			<value id="bi4" title="车速值" alias="SPEED"/>
+			<!-- <value id="bi1" title="R档允许标志" alias="ALLOW_FLAG_R"/>
+			<value id="bi2" title="M档允许标志" alias="ALLOW_FLAG"/> -->
+			<!-- <value id="bi3" title="当前档位值" alias="CURRENT_GEAR"/> -->
+			<!-- <value id="bi4" title="车速值" alias="SPEED"/> -->
 		</can>
 		<can name="18149CA8">
 			<value id="bj1" title="频率和电压" alias="PUMP_FRE_VOL"/>
@@ -699,9 +707,9 @@
 			<value id="cc7" title="发电机进气温度" alias="ENG_INLET_TEM"/>
 		</can>
 		<can name="0C06A1A7">
-			<value id="cd1" title="需求档位" alias="CD1"/>
+			<!-- <value id="cd1" title="需求档位" alias="CD1"/>
 			<value id="cd2" title="离合目标位置" alias="CLUTCH_TARGET_POSITION"/>
-			<value id="cd3" title="当前档位" alias="CURRENT_GEAR"/>
+			<value id="cd3" title="当前档位" alias="CURRENT_GEAR"/> -->
 			<value id="cd4" title="离合器实际位置" alias="CLU_ACT_POSI"/>
 			<value id="cd5" title="变速箱故障检修" alias="GEA_CD"/>
 			<value id="cd6" title="停车故障" alias="STOP_CD"/>
@@ -726,8 +734,8 @@
 			<value id="ce6" title="插电模式" alias="PLUG_MODE"/>
 			<value id="ce7" title="纯电动模式" alias="PURE_ELE_MODE"/>
 			<value id="ce8" title="传统模式" alias="TRADITIONAL_MODE"/>
-			<value id="ce9" title="前进挡" alias="FORWARD_GEARS"/>
-			<value id="ce10" title="倒车档" alias="REVERSE_GEAR"/>
+			<value id="ce9" title="前进挡" alias="FILE"/>
+			<value id="ce10" title="倒车档" alias="REVERSE"/>
 			<value id="ce11" title="空挡" alias="NEUTRAL_GEAR"/>
 			<value id="ce12" title="后舱门信号" alias="REAR_DOOR_SIGNAL"/>
 			<value id="ce13" title="检修开关" alias="MAINTENANCE_SWITCH"/>
@@ -746,8 +754,8 @@
 			<value id="ce26" title="电机水泵" alias="MOTOR_PUMP"/>
 			<value id="ce27" title="启动马达" alias="START_MOTOR"/>
 			<value id="ce28" title="电池仓风扇" alias="BATTERY_FAN"/>
-			<value id="ce29" title="加速踏板" alias="CE29"/>
-			<value id="ce30" title="制动踏板" alias="CE30"/>
+			<value id="ce29" title="加速踏板" alias="PERCENTAGE_TRACTION_PEDAL"/>
+			<value id="ce30" title="制动踏板" alias="BRAKE_PEDAL_PERCENTAGE"/>
 			<value id="ce31" title="目标功率" alias="CE31"/>
 		</can>
 		<can name="0C08A1A7">
@@ -899,20 +907,20 @@
 			<value id="el2" title="二档钥匙" alias="TWO_KEY"></value>
 			<value id="el20" title="钥匙Start信号" alias=""></value>
 			<value id="el21" title="舱灯信号" alias=""></value>
-			<value id="el22" title="加速踏板 0.4%/bit，正常取值0-250" alias="ACCELERATION"></value>
-			<value id="el23" title="制动踏板 0.4%/bit，正常取值0-250" alias="AUTO"></value>
+			<value id="el22" title="加速踏板 0.4%/bit，正常取值0-250" alias="PERCENTAGE_TRACTION_PEDAL"></value>
+			<value id="el23" title="制动踏板 0.4%/bit，正常取值0-250" alias="BRAKE_PEDAL_PERCENTAGE"></value>
 			<value id="el24" title="数据采集异常状态" alias=""></value>
-			<value id="el3" title="前进" alias="FORWARK"></value>
-			<value id="el4" title="后退" alias="BACK_OFF"></value>
-			<value id="el5" title="空档" alias=""></value>
+			<value id="el3" title="前进" alias="FILE"></value>
+			<value id="el4" title="后退" alias="REVERSE"></value>
+			<value id="el5" title="空档" alias="NEUTRAL_GEAR"></value>
 			<value id="el6" title="诊断开关" alias="DIAGNOSTIC_SWITCH"></value>
 			<value id="el7" title="ST1高温开关" alias="HIGH_TEMPERATURE_SWITCH"></value>
 			<value id="el8" title="ST2限低温开关" alias="LOW_TEMPERATURE_SWITCH"></value>
 			<value id="el9" title="爬坡开关" alias="CLIMBING_SWITCH"></value>
 		</can>
 		<can name="0C03A1A7">
-			<value id="da1" title="动力总成控制器输入电压 0.1V/bit；偏移量：-0000,范围: 0V ~ 999V" alias="POWER_ASS_CTRL_PUTVOLTAGE"/>
-			<value id="da2" title="动力总成控制器输入电流 0.1A/bit；偏移量：-10000,范围: -999A ~ 999A" alias="POWER_ASS_CTRL_PUTCUR"/>
+			<value id="da1" title="动力总成控制器输入电压 0.1V/bit；偏移量：-0000,范围: 0V ~ 999V" alias="MOTOR_VOL"/>
+			<value id="da2" title="动力总成控制器输入电流 0.1A/bit；偏移量：-10000,范围: -999A ~ 999A" alias="MOTOR_CUR"/>
 			<value id="da3" title="驱动电机转矩 1NM/bit；偏移量：-32000,范围：-3000~3000Nm" alias="DRI_MOTOR_TOR"/>
 			<value id="da4" title="电机转速 0.5 rpm /bit；偏移量：0,范围：0 ~ 9999" alias="MOTOR_RPM"/>
 		</can>
@@ -934,9 +942,9 @@
 			<value id="db3" title="发电机温度 1 ℃/bit,偏移量：-40℃" alias="GENERATOR_TEMPERATURE"/>
 			<value id="db4" title="发电机控制器温度 1 ℃/bit,偏移量：-40℃" alias="CENERATOR_DB"/>
 			<value id="db5" title="控制器上电指示 1：有效,0：无效" alias="CTRLPOWER"/>
-			<value id="db6" title="空挡 1：有效,0：无效" alias="NEUTRAL_GEAR"/>
+			<!-- <value id="db6" title="空挡 1：有效,0：无效" alias="NEUTRAL_GEAR"/>
 			<value id="db7" title="倒档 1：有效,0：无效" alias="REVERSE"/>
-			<value id="db8" title="D档 1：有效,0：无效" alias="FILE"/>
+			<value id="db8" title="D档 1：有效,0：无效" alias="FILE"/> -->
 			<value id="db9" title="爬坡模式 1：有效,0：无效" alias="CLIMODE"/>
 		</can>
 		<can name="0C05A1A7">
@@ -1005,7 +1013,7 @@
 			<value id="ei9" title="输入过压" alias=""></value>
 		</can>
 		<can name="0C08A7F0">
-			<value id="eb1" title="驱动电机转矩 1NM/bit，-32000" alias="MOTOR_RPM"></value>
+			<value id="eb1" title="驱动电机转矩 1NM/bit，-32000" alias=""></value>
 			<value id="eb10" title="允许下电 0:无效 1:有效" alias=""></value>
 			<value id="eb11" title="Ready 0:无效 1:有效" alias=""></value>
 			<value id="eb12" title="整车控制器Life 0－255" alias=""></value>
@@ -1124,7 +1132,7 @@
 			<value id="di16" title="整车车速 (0.5km/h)/bit,0" alias="SPEED"></value>
 			<value id="di17" title="左侧气囊气压 0.1kpa/bit,0" alias="AIR_PRESSURE1"></value>
 			<value id="di18" title="右侧气囊气压 0.1kpa/bit,0" alias="AIR_PRESSURE2"></value>
-			<value id="di2" title="驻车信号 1有效，0无效" alias="DRI_SIGNAL"></value>
+			<value id="di2" title="驻车信号 1有效，0无效" alias="HAND"></value>
 			<value id="di3" title="后舱门开启信号 1有效，0无效" alias="OPEN_REAR_DOOR"></value>
 			<value id="di4" title="前门开信号 1有效，0无效" alias="FRONT_DOOR_SIGNAL"></value>
 			<value id="di5" title="后门开信号 1有效，0无效" alias="BACK_DOOR_SIGNAL"></value>
@@ -1154,14 +1162,14 @@
 			<value id="dn1" title="电池温控器开启指令 85：启动，170：关闭" alias="BATTERY_TEM_CTRL"></value>
 			<value id="dn10" title="水泵工作状态 85：启动，170：关闭" alias="PUMP_WORK_STATE"></value>
 			<value id="dn11" title="VCU LIFE 分辨率1/bit，偏移量0，范围0-255" alias="vcu-life"></value>
-			<value id="dn2" title="1档" alias="FILES1"></value>
+			<!-- <value id="dn2" title="1档" alias="FILES1"></value>
 			<value id="dn3" title="2档" alias="FILES2"></value>
 			<value id="dn4" title="3档" alias="FILES3"></value>
 			<value id="dn5" title="4档" alias="FILES4"></value>
 			<value id="dn6" title="5档" alias="FILES5"></value>
 			<value id="dn7" title="6档" alias="FILES6"></value>
 			<value id="dn8" title="7档" alias="FILES7"></value>
-			<value id="dn9" title="8档" alias="FILES8"></value>
+			<value id="dn9" title="8档" alias="FILES8"></value> -->
 		</can>
 		<can name="0CFF13F4">
 			<value id="do1" title="压缩机转速 1rpm/bit，无偏移" alias="COM_SPEED"></value>
@@ -1277,7 +1285,7 @@
 		<can name="0C03A1A7">
 			<value id="fa1" title="电机控制器输入电压" alias="MOTOR_VOL"/>
 			<value id="fa2" title="电机目标扭矩" alias="MOTOR_TARGET_TORQUE"/>
-			<value id="fa3" title="电机控制器输入电流" alias="GENERATOR_CTRL_INPUT_CURRENT"/>
+			<value id="fa3" title="电机控制器输入电流" alias="MOTOR_CUR"/>
 			<value id="fa4" title="电机转速" alias="MOTOR_RPM"/>
 		</can>
 		<can name="0C04A1A7">
@@ -1295,8 +1303,8 @@
 			<value id="fb12" title="ECU唤醒" alias="AWAKEN"/>
 			<value id="fb13" title="电容接触器信号" alias="CAPAC_CON_SIGNAL"/>
 			<value id="fb14" title="空挡" alias="NEUTRAL_GEAR"/>
-			<value id="fb15" title="倒档" alias="BACK_OFF"/>
-			<value id="fb16" title="前进" alias="FORWARK"/>
+			<value id="fb15" title="倒档" alias="REVERSE"/>
+			<value id="fb16" title="前进" alias="FILE"/>
 			<value id="fb17" title="电池接触器信号 " alias="BATTERY_CON_SIGNAL"/>
 			<value id="fb18" title="电量保持模式 " alias="CHARGE-SUSTAINING MODE"/>
 			<value id="fb19" title="纯电动模式 " alias="PURE_ELE_MODE"/>
@@ -1316,8 +1324,8 @@
 			<value id="fc7" title="网络生命值" alias="NETWORK_VALUE"/>
 		</can>
 		<can name="0C06A1A7">
-			<value id="fd1" title="牵引踏板百分比1" alias="PER_TRACTION_PEDAL1"/>
-			<value id="fd2" title="牵引踏板百分比2" alias="PER_TRACTION_PEDAL2"/>
+			<value id="fd1" title="牵引踏板百分比1" alias="PERCENTAGE_TRACTION_PEDAL"/>
+			<value id="fd2" title="牵引踏板百分比2" alias="PERCENTAGE_TRACTION_PEDAL2"/>
 			<value id="fd3" title="制动踏板百分比 " alias="BRAKE_PEDAL_PERCENTAGE"/>
 			<value id="fd4" title="发动机目标油门 " alias="ENGINE_TARGET_THROTTLE"/>
 			<value id="fd5" title="发动机实际油门 " alias="ACTUAL_ENGINE_THROTTLE"/>
@@ -1335,7 +1343,7 @@
 		</can>
 		<can name="0C19A7A1">
 			<value id="ff1" title="整车气压低报警" alias="VEHICLE_AIR_PRESSURE_LOW_ALARM"/>
-			<value id="ff2" title="驻车信号" alias="DRI_SIGNAL"/>
+			<value id="ff2" title="驻车信号" alias="HAND"/>
 			<value id="ff3" title="后舱门开启信号" alias="OPEN_REAR_DOOR"/>
 			<value id="ff4" title="前门开信号" alias="FRONT_DOOR_SIGNA"/>
 			<value id="ff5" title="后门开信号 " alias="BACK_DOOR_SIGNAL"/>
@@ -1349,6 +1357,7 @@
 			<value id="ff13" title="时" alias="TIME"/>
 			<value id="ff14" title="分" alias="BRANCH"/>
 			<value id="ff15" title="秒" alias="SECOND"/>
+			<value id="ff16" title="车速" alias="SPEED"/>
 		</can>
 		<can name="180028F4">
 			<value id="fl1" title="" alias=" "/>
@@ -1407,6 +1416,9 @@
 		<can name="18XX28F3">
 			<value id="fk1" title="箱号 " alias=" "/>
 			<value id="fk2" title="电压" alias=" "/>
+		</can>
+		<can name="0C1AA7A1">
+			<value id="expdistance1" title="里程" alias="MILEAGE"/>
 		</can>
 
 	</analyzeType>
@@ -1473,6 +1485,7 @@
 			<value id="ai6" title="超级电容输入能量" alias="CAPCINENERGY"></value>
 			<value id="aj4" title="超级电容输出总电能" alias="CAPACONENERGY"></value>
 		</can>
+
 		<can name="0C1BA709">
 			<value id="am3" title="DCDC系统消耗总电能（kwh）" alias="DCDCENERGY" >
 		</value>
