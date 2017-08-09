@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>kafka-demo</groupId>
-	<artifactId>kafka-analysis-redis</artifactId>
+	<artifactId>kafka-analysis-redis-2</artifactId>
 	<version>1.0.2</version>
 	<packaging>jar</packaging>
-	<name>kafka-analysis-redis</name>
+	<name>kafka-analysis-redis-2</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -14,11 +14,37 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka_2.10</artifactId>
-			<version>0.8.1</version>
-		</dependency>
+			
+	  <dependency>  
+        <groupId>org.apache.kafka</groupId>  
+        <artifactId>kafka_2.10</artifactId>  
+        <version>0.8.1</version> 
+        <exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions> 
+    </dependency>   
+     <dependency>  
+        <groupId>org.apache.kafka</groupId>  
+        <artifactId>kafka-clients</artifactId>  
+        <version>0.9.0.1</version> 
+        <exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions> 
+    </dependency>  
 		<dependency>
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
@@ -55,7 +81,7 @@
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-log4j12</artifactId>
-    <version>1.5.8</version>
+    <version>1.7.2</version>
 </dependency>
 			<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
@@ -103,7 +129,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>simplekafka08.simplekafka08.ConsumerDemo</mainClass>
+							<mainClass>simplekafka08.simplekafka08.MyConsumer</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>

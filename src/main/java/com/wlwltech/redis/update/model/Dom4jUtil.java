@@ -9,7 +9,10 @@ import java.util.Map;
 
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
+
+
 
 
 
@@ -75,7 +78,7 @@ public class Dom4jUtil {
 		// element.selectSingleNode("//analyzeType[@type='"+type+"']") ;
 
 	
-		List<Object> databases=element.selectNodes("//analyzeType[@type='" + analyzeType + "']//value[@alias='" + name + "']");
+		List<Node> databases=element.selectNodes("//analyzeType[@type='" + analyzeType + "']//value[@alias='" + name + "']");
 		if(null==databases||databases.size()==0){
 			databases=element.selectNodes("//energy//value[@alias='" + name + "']");
 		}
