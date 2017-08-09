@@ -136,10 +136,10 @@ public class ConsumerDemo {
 				prop.get("kafka.topicName.canData"));
 		mcu.run(threads);
 
-		 ConsumerDemo gps = new ConsumerDemo(prop.get("kafka.server"),
-		 prop.get("kafka.groupId"),
-		 prop.get("kafka.topicName.gpsData"));
-		 gps.run(threads);
+//		 ConsumerDemo gps = new ConsumerDemo(prop.get("kafka.server"),
+//		 prop.get("kafka.groupId"),
+//		 prop.get("kafka.topicName.gpsData"));
+//		 gps.run(threads);
 
 		// demo.shutdown();
 
