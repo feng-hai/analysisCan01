@@ -66,13 +66,14 @@ public class ConsumerMsgTask implements Runnable {
 		} catch (Exception ex) {
 			LOG.error("it.hasNext() ", ex);
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			System.out.println("Shutting down Thread: " + m_threadNumber);
 			this.run();
 		}
-		System.out.println("Shutting down Thread: " + m_threadNumber);
+		
 	}
 }
