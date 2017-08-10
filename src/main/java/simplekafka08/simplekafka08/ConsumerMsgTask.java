@@ -32,36 +32,46 @@ public class ConsumerMsgTask implements Runnable {
 		if (it == null) {
 			return;
 		}
+		try {
+			while (it.hasNext()) {
+				// lock.lock();
+				try {
+					// count++;
+					// System.out.println(count);
 
-		while (it.hasNext()) {
-			// lock.lock();
-			try {
-				// count++;
-				// System.out.println(count);
+					// String temp=
+					//
 
-				// String temp=
-				//
+					// byte[] temp=it.next().message();
 
-				// byte[] temp=it.next().message();
+					byte[] message = it.next().message();
 
-				byte[] message = it.next().message();
+					if (message != null && message.length > 0) {
+						// executor.submit(new HandleThread(message));
 
-				if (message != null && message.length > 0) {
-					 //executor.submit(new HandleThread(message));
+						executor.submit(new HandleThreadForStatus(message));
+					}
 
-				     executor.submit(new HandleThreadForStatus(message));
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println("ConsumerMsgTask-run");
+					LOG.error("数据获取或处理出错",e);
+				} finally {
+					// System.out.println(m_threadNumber+"释放了锁");
+					// lock.unlock();
 				}
-				
-			} catch (Exception e) {
-				// TODO: handle exception
-				System.out.println("ConsumerMsgTask-run");
-				e.printStackTrace();
-			} finally {
-				// System.out.println(m_threadNumber+"释放了锁");
-				// lock.unlock();
-			}
 
-			// LOG.debug(temp);
+				// LOG.debug(temp);
+			}
+		} catch (Exception ex) {
+			LOG.error("it.hasNext() ", ex);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			this.run();
 		}
 		System.out.println("Shutting down Thread: " + m_threadNumber);
 	}
