@@ -37,6 +37,7 @@ public class MyTask extends TimerTask {
 	public void run() {
 		// TODO Auto-generated method stub
 		loadData();
+		System.out.println("缓存大小："+publicStaticMap.getMessageQueue().size());
 	}
 	
 	  //遍历当前节点下的所有节点  

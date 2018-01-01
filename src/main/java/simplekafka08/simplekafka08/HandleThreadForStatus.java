@@ -30,15 +30,25 @@ public class HandleThreadForStatus extends Thread {
 	// private static Map<String, Date> dateMap = new HashMap<String, Date>();
 
 	private static final Logger logger = LoggerFactory.getLogger(HandleThreadForStatus.class);
-	private byte[] sentence;
+	//private byte[] sentence;
 
-	public HandleThreadForStatus(byte[] temp) {
-		this.sentence = temp;
-	}
+	//public HandleThreadForStatus(byte[] temp) {
+	//	this.sentence = temp;
+	//}
 
 	public void run() {
-		// while (true) {
-		byte[] sentence = this.sentence;
+	 while (true) {
+		byte[] sentence=null;
+		try {
+			sentence = publicStaticMap.getMessageQueue().take();
+			if(publicStaticMap.getMessageQueue().size()>5000)
+			{
+				publicStaticMap.getMessageQueue().clear();
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// try {
 		// sentence = publicStaticMap.getMessageQueue().take();
 		// } catch (InterruptedException e) {
@@ -48,34 +58,34 @@ public class HandleThreadForStatus extends Thread {
 		SimpleDateFormat DEFAULT_DATE_SIMPLEDATEFORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 		if (sentence == null) {
-			return;
+			continue;
 		}
 		Message message = getMessage(sentence);
 
 		if (message == null) {
-			return;
+			continue;
 		}
 		if (message != null) {
 
 			if (message.getAppend() == null) {
-				return;
+				continue;
 			}
 
 			Integer machineryId = message.getAppend().getMachineryId();
 
 			if (machineryId == null) {
-				return;
+				continue;
 			}
 
 			Date date = message.getAppend().getServerTime();
 			if (date == null) {
-				return;
+				continue;
 			}
 			if (new Date().getTime() - date.getTime() > 5 * 1000 * 60) {
 
-				logger.info("抛弃" + machineryId + "/"
+				logger.info("缓存中的大小"+publicStaticMap.getMessageQueue().size()+"抛弃" + machineryId + "/"
 						+ DEFAULT_DATE_SIMPLEDATEFORMAT.format(message.getAppend().getServerTime()));
-				return;
+			//	continue;
 			}
 
 			Map<String, String> values = new HashMap<String, String>();
@@ -190,7 +200,7 @@ public class HandleThreadForStatus extends Thread {
 				logger.error("", ex);
 			}
 		}
-		// }
+	 }
 
 	}
 

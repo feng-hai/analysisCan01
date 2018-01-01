@@ -44,18 +44,28 @@ public class SaveDataRedis extends Thread {
 		while (true) {
 			try {
 				ObjectModelOfRedis message = publicStaticMap.getRedisValuesQueue().take();
+				if(publicStaticMap.getRedisValuesQueue().size()>5000)
+				{
+					publicStaticMap.getRedisValuesQueue().clear();
+				}
 				jcp.hmset("mach:" + message.getKey(), message.getRedisValues());
 				// RedisPool.getInstance().getJedisCluster().hmset("mach:"
 				// +message.getKey(), message.getRedisValues());
 
-				logger.info("K" + message.getKey() +"-"+ publicStaticMap.getMessageQueue().size()+"-" + publicStaticMap.getRedisValuesQueue().size() + "-"
-						+ message.getRedisValues().get("lastLocateTime") + ":"
-						+ message.getRedisValues().get("MILEAGE")+":"+ message.getRedisValues().get("lastCanTime"));
-
+				
 				long t = System.currentTimeMillis() - s;
-				if (t >= 1000) {
+				if (t >= 10000) {
 					jcp.sync();
 					s = System.currentTimeMillis();
+					long size=publicStaticMap.getRedisValuesQueue().size();
+					logger.info("换成中数据大小："+publicStaticMap.getRedisValuesQueue().size()+"K" + message.getKey() +"-"+ publicStaticMap.getMessageQueue().size()+"-" + size + "-"
+							+ message.getRedisValues().get("lastLocateTime") + ":"
+							+ message.getRedisValues().get("MILEAGE")+":"+ message.getRedisValues().get("lastCanTime"));
+					if(size>10000)
+					{
+						publicStaticMap.getRedisValuesQueue().clear();
+					}
+
 				}
 
 			} catch (Exception e) {

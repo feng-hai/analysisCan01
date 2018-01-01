@@ -254,6 +254,7 @@ public class JedisClusterPipeline extends PipelineBase implements Closeable {
             // batch write
             for (int i = 0; i < 10000; i++) {
                 jcp.set("k" + i, "v1" + i);
+                //jcp.hmset(key, hash)
             }
             jcp.sync();
 

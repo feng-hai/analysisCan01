@@ -27,7 +27,7 @@ public class ConsumerMsgTask implements Runnable {
 
 	public void run() {
 
-		ExecutorService executor = Executors.newFixedThreadPool(50);
+		ExecutorService executor = Executors.newFixedThreadPool(5);
 		ConsumerIterator<byte[], byte[]> it = m_stream.iterator();
 		if (it == null) {
 			return;
@@ -49,7 +49,9 @@ public class ConsumerMsgTask implements Runnable {
 					if (message != null && message.length > 0) {
 						// executor.submit(new HandleThread(message));
 
-						executor.submit(new HandleThreadForStatus(message));
+					publicStaticMap.getMessageQueue().add(message);
+						
+						//executor.submit(new HandleThreadForStatus(message));
 					}
 
 				} catch (Exception e) {

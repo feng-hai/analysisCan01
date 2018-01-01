@@ -124,7 +124,10 @@ public class ConsumerDemo {
 //			sendData.setDaemon(true);
 //			sendData.start();
 //		}
-		// for (int i = 0; i < 3; i++) {
+		HandleThreadForStatus updateStatus=new HandleThreadForStatus();
+		updateStatus.setDaemon(true);
+		updateStatus.start();
+		 //for (int i = 0; i < 3; i++) {
 				SaveDataRedis sendData = new SaveDataRedis();
 				sendData.setDaemon(true);
 				sendData.start();
