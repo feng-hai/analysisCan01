@@ -27,7 +27,7 @@ public class ConsumerMsgTask implements Runnable {
 
 	public void run() {
 
-		ExecutorService executor = Executors.newFixedThreadPool(5);
+		//ExecutorService executor = Executors.newFixedThreadPool(50);
 		ConsumerIterator<byte[], byte[]> it = m_stream.iterator();
 		if (it == null) {
 			return;
