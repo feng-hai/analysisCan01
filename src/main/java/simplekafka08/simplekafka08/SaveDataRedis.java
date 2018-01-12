@@ -36,44 +36,52 @@ public class SaveDataRedis extends Thread {
 
 	}
 
-	
 	@SuppressWarnings("resource")
 	public void run() {
-	 JedisClusterPipeline jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
+		JedisClusterPipeline jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
 		long s = System.currentTimeMillis();
+		long count = 0;
 		while (true) {
 			try {
 				ObjectModelOfRedis message = publicStaticMap.getRedisValuesQueue().take();
-				if(publicStaticMap.getRedisValuesQueue().size()>5000)
-				{
+				if (publicStaticMap.getRedisValuesQueue().size() > 2000) {
 					publicStaticMap.getRedisValuesQueue().clear();
 				}
 				jcp.hmset("mach:" + message.getKey(), message.getRedisValues());
 				// RedisPool.getInstance().getJedisCluster().hmset("mach:"
 				// +message.getKey(), message.getRedisValues());
 
-				
 				long t = System.currentTimeMillis() - s;
-				if (t >= 10000) {
+				if (t >= 10000 || count++ > 500) {
+					count = 0;
 					jcp.sync();
 					s = System.currentTimeMillis();
-					long size=publicStaticMap.getRedisValuesQueue().size();
-					logger.info("换成中数据大小："+publicStaticMap.getRedisValuesQueue().size()+"K" + message.getKey() +"-"+ publicStaticMap.getMessageQueue().size()+"-" + size + "-"
+					long size = publicStaticMap.getRedisValuesQueue().size();
+					logger.info("换成中数据大小：" + publicStaticMap.getRedisValuesQueue().size() + "K" + message.getKey() + "-"
+							+ publicStaticMap.getMessageQueue().size() + "-" + size + "-"
 							+ message.getRedisValues().get("lastLocateTime") + ":"
-							+ message.getRedisValues().get("MILEAGE")+":"+ message.getRedisValues().get("lastCanTime"));
-					if(size>10000)
-					{
+							+ message.getRedisValues().get("MILEAGE") + ":"
+							+ message.getRedisValues().get("lastCanTime"));
+					if (size > 2000) {
 						publicStaticMap.getRedisValuesQueue().clear();
 					}
-
 				}
-
 			} catch (Exception e) {
-				e.printStackTrace();
-			
+				logger.error("更新redis失败",e);
+				try {
+					Thread.sleep(60000);
+					jcp.close();
+
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (Exception ex) {
+					logger.error("关闭jcp失败",ex);
+				}
+				jcp = null;
 				jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
 				jcp.refreshCluster();
-			   //	jcp.refreshCluster();
+				// jcp.refreshCluster();
 			}
 
 		}

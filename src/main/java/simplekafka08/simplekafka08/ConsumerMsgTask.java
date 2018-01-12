@@ -48,9 +48,11 @@ public class ConsumerMsgTask implements Runnable {
 
 					if (message != null && message.length > 0) {
 						// executor.submit(new HandleThread(message));
-
-					publicStaticMap.getMessageQueue().add(message);
-						
+						if(publicStaticMap.getMessageQueue().size()>2000)
+						{
+							publicStaticMap.getMessageQueue().clear();
+						}
+						publicStaticMap.getMessageQueue().add(message);
 						//executor.submit(new HandleThreadForStatus(message));
 					}
 
