@@ -71,6 +71,9 @@ public class SaveDataRedis extends Thread {
 				try {
 					Thread.sleep(60000);
 					jcp.close();
+					jcp = null;
+					jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
+					jcp.refreshCluster();
 
 				} catch (InterruptedException e1) {
 					// TODO Auto-generated catch block
@@ -78,9 +81,7 @@ public class SaveDataRedis extends Thread {
 				} catch (Exception ex) {
 					logger.error("关闭jcp失败",ex);
 				}
-				jcp = null;
-				jcp = JedisClusterPipeline.pipelined(RedisPool.getInstance().getJedisCluster());
-				jcp.refreshCluster();
+				
 				// jcp.refreshCluster();
 			}
 

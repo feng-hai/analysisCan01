@@ -189,7 +189,11 @@ public class HandleThreadForStatus extends Thread {
 					ObjectModelOfRedis redisValues = new ObjectModelOfRedis();
 					redisValues.setKey(machineryId.toString());
 					redisValues.setRedisValues(values);
-
+						
+					if(publicStaticMap.getRedisValuesQueue().size()>2000)
+					{
+						publicStaticMap.getRedisValuesQueue().clear();
+					}
 					publicStaticMap.getRedisValuesQueue().put(redisValues);
 
 				} else {
