@@ -125,7 +125,12 @@ public class HandleThread implements Runnable {
 					modelKafka.setDATIME_RX(DEFAULT_DATE_SIMPLEDATEFORMAT.format(message.getAppend().getServerTime()));
 					modelKafka.setPairs(pairs);
 					modelKafka.setAnalyzeType(protocol);
+					if(publicStaticMap.getQueue().size()>2000)
+					{
+						publicStaticMap.getQueue().clear();
+					}
 					publicStaticMap.getQueue().put(modelKafka);
+					
 				}
 			} catch (Exception ex) {
 				//System.out.println("HandleThread-run");

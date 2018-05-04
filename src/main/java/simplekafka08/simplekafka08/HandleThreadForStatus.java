@@ -195,6 +195,8 @@ public class HandleThreadForStatus extends Thread {
 						publicStaticMap.getRedisValuesQueue().clear();
 					}
 					publicStaticMap.getRedisValuesQueue().put(redisValues);
+					
+			
 
 				} else {
 

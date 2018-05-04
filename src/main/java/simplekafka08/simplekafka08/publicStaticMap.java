@@ -24,7 +24,21 @@ public class publicStaticMap {
     private static  BlockingQueue<ObjectModelOfRedis>redisQueue= new LinkedBlockingQueue<ObjectModelOfRedis>();
     
     private static  BlockingQueue<byte[]>messageQueue= new LinkedBlockingQueue<byte[]>();
+    //保存到ES临时插件
+    private static BlockingQueue<ObjectModelOfRedis> queueES = new LinkedBlockingQueue<ObjectModelOfRedis>();
     
+	/**
+	 * @return the queueES
+	 */
+	public static BlockingQueue<ObjectModelOfRedis> getQueueES() {
+		return queueES;
+	}
+	/**
+	 * @param queueES the queueES to set
+	 */
+	public static void setQueueES(BlockingQueue<ObjectModelOfRedis> queueES) {
+		publicStaticMap.queueES = queueES;
+	}
 	public  static  Map<String,Map<String, Pair>> getCans()
 	{
 		return values;
