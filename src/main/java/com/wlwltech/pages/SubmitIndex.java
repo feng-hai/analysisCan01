@@ -40,7 +40,7 @@ public class SubmitIndex implements Runnable {
 				hashMap.put("location", vehicle.getLocation());
 				hashMap.put("time", vehicle.getTime());
 				bulkRequest.add(EsutilSingle.getClient().prepareIndex(tableName, type)
-						.setId(vehicle.getVehicleUnid() + "-" + vehicle.getTime()).setSource(hashMap));
+						.setId(vehicle.getTime()+"").setSource(hashMap));
 
 			}
 			//logger.error("开始提交02");
