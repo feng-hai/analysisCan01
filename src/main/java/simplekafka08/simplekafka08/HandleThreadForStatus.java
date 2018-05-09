@@ -196,7 +196,12 @@ public class HandleThreadForStatus extends Thread {
 					}
 					publicStaticMap.getRedisValuesQueue().put(redisValues);
 					
-			
+					if(publicStaticMap.getQueueES().size()>2000)
+					{
+						publicStaticMap.getQueueES().clear();
+					}
+					//logger.error("添加ES队列数据"+publicStaticMap.getQueueES().size());
+					publicStaticMap.getQueueES().put(redisValues);
 
 				} else {
 

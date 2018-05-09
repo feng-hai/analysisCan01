@@ -160,7 +160,7 @@ public class MyTask extends TimerTask {
 			}
 			for (Map<String, Object> idO : result) {
 				
-				System.out.println(JsonUtils.serialize(idO));
+				//System.out.println(JsonUtils.serialize(idO));
 				String id = idO.get("ID").toString();
 				String protolType = idO.get("ANALYZE_TYPE").toString();
 				//System.out.println(protolType);

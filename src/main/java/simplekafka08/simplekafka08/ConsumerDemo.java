@@ -126,6 +126,7 @@ public class ConsumerDemo {
 //		sendDataKafka.start();
 		// }
 		//更新redis
+
 		SaveDataToES sendDataES = new SaveDataToES();
 		sendDataES.setDaemon(true);
 		sendDataES.start();

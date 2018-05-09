@@ -21,8 +21,6 @@ import org.slf4j.LoggerFactory;
 
 import com.wlwltech.redis.update.model.VehicleIndex;
 
-
-
 public class EsUtilProcessor {
 
 	private EsUtilProcessor() {
@@ -44,25 +42,21 @@ public class EsUtilProcessor {
 				.put("transport.type", "netty3").put("http.type", "netty3").put("index.refresh_interval", "5s").build();//// 每5秒提交一次数据，类似oracle中的commit
 
 		try {
-			client = new PreBuiltTransportClient(settings);
-			String servers = PropertyResource.getInstance().getProperties().get("index.server");
-			String[] serverIndex = servers.split(",");
-			for (String index : serverIndex) {
-				client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(index), 9300));
-			}
-			// client = new PreBuiltTransportClient( settings
-			// ).addTransportAddress( new
-			// InetSocketTransportAddress(
-			// InetAddress.getByName( "192.168.1.21" ),9300 )
-			// ).addTransportAddress( new
-			// InetSocketTransportAddress(
-			// InetAddress.getByName( "192.168.1.22" ),9300 )
-			// ).addTransportAddress( new
-			// InetSocketTransportAddress(
-			// InetAddress.getByName( "192.168.1.23" ),9300 )
-			// ).addTransportAddress( new
-			// InetSocketTransportAddress(
-			// InetAddress.getByName( "192.168.1.24" ), 9300 ) );
+			// client = new PreBuiltTransportClient(settings);
+			// String servers =
+			// PropertyResource.getInstance().getProperties().get("index.server");
+			// String[] serverIndex = servers.split(",");
+			// for (String index : serverIndex) {
+			//
+			// client.addTransportAddress(new
+			// InetSocketTransportAddress(InetAddress.getByName(index), 9300));
+			// }
+			client = new PreBuiltTransportClient(settings)
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("192.168.21.9"), 9300))
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("192.168.21.10"), 9300))
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("192.168.21.11"), 9300))
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("192.168.21.12"), 9300))
+					.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("192.168.21.13"), 9300));
 		} catch (Exception e) {
 			// e.printStackTrac();
 			logger.error("连接索引错误", e);
@@ -70,13 +64,10 @@ public class EsUtilProcessor {
 		return client;
 	}
 
-	/** 
-	* @Title: getProcessor 
-	* @Description: TODO(这里用一句话描述这个方法的作用) 
-	* @param @return    设定文件 
-	* @return BulkProcessor    返回类型 
-	* @throws 
-	*/
+	/**
+	 * @Title: getProcessor @Description: TODO(这里用一句话描述这个方法的作用) @param @return
+	 * 设定文件 @return BulkProcessor 返回类型 @throws
+	 */
 	public static BulkProcessor getProcessor() {
 		if (bulkProcessor != null) {
 			return bulkProcessor;
@@ -98,41 +89,38 @@ public class EsUtilProcessor {
 			return bulkProcessor;
 		}
 	}
-	/** 
-	* @Title: addIndex 
-	* @Description: TODO(这里用一句话描述这个方法的作用) 
-	* @param @param index
-	* @param @param type
-	* @param @param vehicles    设定文件 
-	* @return void    返回类型 
-	* @throws 
-	*/
+
+	/**
+	 * @Title: addIndex @Description: TODO(这里用一句话描述这个方法的作用) @param @param
+	 * index @param @param type @param @param vehicles 设定文件 @return void
+	 * 返回类型 @throws
+	 */
 	public static void addIndex(String index, String type, List<VehicleIndex> vehicles) {
 		try {
 			logger.info("开始提交");
-			BulkProcessor bulkProcessor=getProcessor();
-		   // int max=0;
+			BulkProcessor bulkProcessor = getProcessor();
+			// int max=0;
 			for (VehicleIndex vehicle : vehicles) {
 				HashMap<String, Object> hashMap = new HashMap<String, Object>();
 				hashMap.put("id", vehicle.getVehicleUnid());
 				hashMap.put("time", vehicle.getTime());
-				bulkProcessor.add(new IndexRequest(index, type, vehicle.getVehicleUnid() + "-" + vehicle.getTime()).source(hashMap));  
-//				bulkProcessor.add(getClient().prepareIndex(index, type)
-//						.setId(vehicle.getVehicleUnid() + "-" + vehicle.getTime()).setSource(hashMap));
-//				if(max++%100==0);
-//				{
-//					max=0;
-//					bulkRequest.execute().actionGet();
-//				}
+				bulkProcessor.add(new IndexRequest(index, type, vehicle.getVehicleUnid() + "-" + vehicle.getTime())
+						.source(hashMap));
+				// bulkProcessor.add(getClient().prepareIndex(index, type)
+				// .setId(vehicle.getVehicleUnid() + "-" +
+				// vehicle.getTime()).setSource(hashMap));
+				// if(max++%100==0);
+				// {
+				// max=0;
+				// bulkRequest.execute().actionGet();
+				// }
 			}
-			//bulkRequest.execute().actionGet();
+			// bulkRequest.execute().actionGet();
 			logger.info("开始结束");
 		} catch (Exception ex) {
-			logger.error("插入所有错误",ex);
+			logger.error("插入所有错误", ex);
 			client = null;
 		}
 	}
-
-	
 
 }

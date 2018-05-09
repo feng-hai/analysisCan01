@@ -33,7 +33,7 @@ public class PropertyResource
 		String path;
 		try
 		{
-			path = new File( "." ).getCanonicalPath() + "/resource/config.properties";
+			path = new File( "." ).getCanonicalPath() + "cfg.properties";
 			InputStream in = new BufferedInputStream( new FileInputStream( path ) );
 			prop.load( in );
 			Iterator<String> it = prop.stringPropertyNames().iterator();
