@@ -44,7 +44,12 @@ public class SaveDataToES extends Thread {
 				vi.setTime(DEFAULT_DATE_SIMPLEDATEFORMAT.parse(message.getRedisValues().get("lastCanTime")).getTime());
 				vi.setOnLine(Integer.parseInt(message.getRedisValues().get("onLine")));
 				vi.setVehicleUnid(message.getKey());
-				SensorIndex.setValue(vi, "vehicle_status");
+				if(System.currentTimeMillis()-vi.getTime()<3000000)
+				{
+					SensorIndex  si=new SensorIndex();
+					si.setValue(vi, "vehicle_status");
+				}
+			
 				// logger.error(message.toString());
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -52,5 +57,4 @@ public class SaveDataToES extends Thread {
 			}
 
 		}
-	}
-}
+}}

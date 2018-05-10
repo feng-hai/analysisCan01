@@ -17,21 +17,21 @@ public class SensorIndex {
 	private static final Logger logger = LoggerFactory.getLogger(SensorIndex.class);
 	// private static int threadNum = Integer
 	// .parseInt(PropertyResource.getInstance().getProperties().get("indexHistoryThreadNum"));
-	private static ExecutorService executor;
+//	private static ExecutorService executor;
+//
+//	static {
+//		executor = Executors.newFixedThreadPool(5);
+//	}
 
-	static {
-		executor = Executors.newFixedThreadPool(5);
-	}
-
-	public synchronized static void setValue(VehicleIndex vi, String tableName) {
+	public synchronized  void setValue(VehicleIndex vi, String tableName) {
 
 		// logger.error("开始插入");
 		vehiclesIndex.add(vi);
-		if (vehiclesIndex.size() > 100) {
+		if (vehiclesIndex.size() > 200) {
 			// logger.error("开始插入01");
-			//executor.submit(
-					new SubmitIndex(tableName, "vehicle", vehiclesIndex).run();
-					//);
+			// executor.submit(
+			new SubmitIndex(tableName, "vehicle", vehiclesIndex).run();
+			// );
 			;
 			vehiclesIndex.clear();
 		}

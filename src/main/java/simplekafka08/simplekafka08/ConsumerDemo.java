@@ -120,23 +120,22 @@ public class ConsumerDemo {
 		// timerOnLine.schedule(new MyTaskOnLine(), new Date(), 120000);
 		//
 		// for (int i = 0; i < 6; i++) {
-		//更新kafka
-//		SendDataTokafka sendDataKafka = new SendDataTokafka();
-//		sendDataKafka.setDaemon(true);
-//		sendDataKafka.start();
+		// 更新kafka
+		// SendDataTokafka sendDataKafka = new SendDataTokafka();
+		// sendDataKafka.setDaemon(true);
+		// sendDataKafka.start();
 		// }
-		//更新redis
-
-		SaveDataToES sendDataES = new SaveDataToES();
-		sendDataES.setDaemon(true);
-		sendDataES.start();
+		// 更新redis
 		
+			SaveDataToES sendDataES = new SaveDataToES();
+			sendDataES.setDaemon(true);
+			sendDataES.start();
+		
+
 		HandleThreadForStatus updateStatus = new HandleThreadForStatus();
 		updateStatus.setDaemon(true);
 		updateStatus.start();
-		
-		
-		
+
 		// for (int i = 0; i < 3; i++) {
 		SaveDataRedis sendData = new SaveDataRedis();
 		sendData.setDaemon(true);
